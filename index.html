@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker Game</title>
     <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <main>
@@ -12,7 +15,9 @@
             clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%); white-space: nowrap;">
             Clicker Game
         </h1> <!-- Gotta be hidden in CSS-->
-        <section class="upgrade-section" aria-label="Upgrade panel">
+
+
+        <section class="upgrade-section" aria-label="Upgrade panel" hidden>
             <ul class="upgrade-list">
                 <li id="upgrade-one"> <!-- "id="upgrade-one"" could be replaced with "data-upgrade="call-to-action"" -->
                     <h3 id="upgrade-one-title">Call to action -
@@ -88,11 +93,13 @@
                 </li>
             </ul>
         </section>
-        <section class="planet-section" aria-label="Main click area">
+
+
+        <section class="planet-section" aria-label="Main click area" >
             <button class="planet-button" type="button" aria-describedby="planet-hint" aria-label="Planet click">
                 <img src="images/mars.png" alt="">
             </button>
-            <div class="planet-hint" id="planet-hint">
+            <div class="planet-hint" id="planet-hint" hidden>
                 <img src="images/hint-arrow.png" alt="">
                 Click your planet to increase population
             </div>
@@ -100,7 +107,7 @@
             <button class="upgrade-moon-button" type="button" aria-describedby="upgrade-moon-hint" aria-label="Upgrade menu">
                 <img src="images/phobos-hint.png" alt="">
             </button>
-            <div class="upgrade-moon-hint" id="upgrade-moon-hint">
+            <div class="upgrade-moon-hint" id="upgrade-moon-hint" hidden>
                 <img src="images/hint-arrow.png" alt="">
                 Opens upgrade panel
             </div>
@@ -108,7 +115,7 @@
             <button class="guide-moon-button" type="button" aria-describedby="guide-moon-hint" aria-label="Guide">
                 <img src="images/deimos-hint.png" alt="">
             </button>
-            <div class="guide-moon-hint" id="guide-moon-hint">
+            <div class="guide-moon-hint" id="guide-moon-hint" hidden>
                 <img src="images/hint-arrow.png" alt="">
                 Opens the game guide
             </div>
@@ -119,8 +126,8 @@
             </p>
         </section>
     </main>
-    <aside>
-        <section id="guide">
+    <aside hidden>
+        <section id="guide" >
             <h2 class="left-aside-title">
                 Congratulations!
             </h2>
