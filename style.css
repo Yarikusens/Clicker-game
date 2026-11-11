@@ -72,12 +72,12 @@ html, body, main {
 
 .status-section {
     position: fixed;
-    top: calc(97% - 50px);
-    width: 200px;
-    height: 50px;
+    top: calc(97% - 100px);
+    width: 400px;
+    height: 100px;
     text-align: center;
-    right: calc(50% - 100px);
-    font-size: 1.4rem;
+    right: calc(50% - 200px);
+    font-size: 2.4rem;
 }
 
 /*#endregion */
