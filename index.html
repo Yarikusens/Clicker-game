@@ -10,7 +10,7 @@
     
 </head>
 <body>
-    <main>
+    <main class="">
         <h1>
             Clicker Game
         </h1>
@@ -90,7 +90,7 @@
                     </div>
                 </li>
             </ul>
-        </section> <!-- class "open" makes it open -->
+        </section>
         <section class="planet-section" aria-label="Main click area" >
             <button class="planet-button" type="button" aria-describedby="planet-hint" aria-label="Planet click">
                 <img src="images/mars.png" alt="">
@@ -121,9 +121,7 @@
                 <span id="status-population">10</span> people | $<span id="status-balance">500</span>
             </p>
         </section>
-    </main>
-    <aside hidden>
-        <section id="guide" >
+        <aside class="guide-section" aria-label="Introduction panel">
             <h2 class="left-aside-title">
                 Congratulations!
             </h2>
@@ -133,12 +131,9 @@
                 earns you $50 per second. Spend that money on upgrades, so your population
                 grows faster and your people work more efficiently
             </p>
-        </section>
-        <section id="glossary">
-            <h2 class="left-aside-title">
-                Upgrade descriptions
-            </h2>
-            <dl class="left-aside-content">
+        </aside>
+        <aside class="glossary-section" aria-label="Upgrade description panel">
+            <dl class="right-aside-content">
                 <div>
                     <dt>Call to action</dt> <dd>is your gift for persuading colonists to start families, spreading the message far and wide; gives more babies per click</dd>
                 </div>
@@ -152,7 +147,9 @@
                     <dt>Policy</dt> <dd>is your iron-fisted code of laws and decrees that pressures colonists into having larger families; compels people to reproduce</dd>
                 </div>
             </dl>
-        </section>
-    </aside>
+        </aside>
+    </main>
+    <script src="java-script/script.js"></script>
+    <script src="java-script/viewController.js"></script>
 </body>
 </html>

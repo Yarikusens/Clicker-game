@@ -1,5 +1,5 @@
 //Games memory//
-let population= 0;
+let population= 10;
 let balance= 0;
 let populationPerClick= 1;
 
