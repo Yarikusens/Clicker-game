@@ -1,6 +1,6 @@
 //Games memory//
 let population= 0;
-let balance= 500;
+let balance= 0;
 let populationPerClick= 1;
 
 //Elements on the page//
@@ -31,4 +31,20 @@ updateStatus();
 
 //Economy//
 //Memory//
+let moneyPerperson=50;
+
+//new function//
+function earnMoney(){
+    balance= balance+moneyPerperson*population;
+    updateStatus();
+}
+
+//Click planet for money//
+planetButton.addEventListener("click",clickPlanet);
+
+//Run earnMoney//
+setInterval(earnMoney, 1000);
+
+//Starting numbers once page loads//
+updateStatus();
 
