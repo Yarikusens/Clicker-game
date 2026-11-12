@@ -11,13 +11,11 @@
 </head>
 <body>
     <main>
-        <h1 style="border: 0; padding: 0; margin: 0; position: absolute; height: 1px; width: 1px; overflow: hidden;
-            clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%); white-space: nowrap;">
+        <h1>
             Clicker Game
-        </h1> <!-- Gotta be hidden in CSS-->
+        </h1>
 
-
-        <section class="upgrade-section" aria-label="Upgrade panel" hidden>
+        <section class="upgrade-section" aria-label="Upgrade panel"> <!-- in order to make the section toggle class "open" -->
             <ul class="upgrade-list">
                 <li id="upgrade-one"> <!-- "id="upgrade-one"" could be replaced with "data-upgrade="call-to-action"" -->
                     <h3 id="upgrade-one-title">Call to action -
@@ -30,7 +28,7 @@
                         Megaphone
                     </button>
 
-                    <div class="upgrade-tooltip" id="tooltip-call-to-action" role="tooltip">
+                    <div class="upgrade-tooltip" id="tooltip-call-to-action" role="tooltip" hidden>
                         Population growth per click
                         <p>Current: +<span class="upgrade-tooltip-current-value">1</span></p>
                         <p>Next: +<span class="upgrade-tooltip-next-value">2</span></p>
@@ -48,7 +46,7 @@
                         Hire a midwife
                     </button>
 
-                    <div class="upgrade-tooltip" id="tooltip-birth-rate" role="tooltip">
+                    <div class="upgrade-tooltip" id="tooltip-birth-rate" role="tooltip" hidden>
                         Number of babies per 5 seconds
                         <p>Current: +<span class="upgrade-tooltip-current-value">0</span></p>
                         <p>Next: +<span class="upgrade-tooltip-next-value">1</span></p>
@@ -67,7 +65,7 @@
                         Greenhouses
                     </button>
 
-                    <div class="upgrade-tooltip" id="tooltip-economy" role="tooltip">
+                    <div class="upgrade-tooltip" id="tooltip-economy" role="tooltip" hidden>
                         Person's earnings per second
                         <p>Current: $<span class="upgrade-tooltip-current-value">50</span></p>
                         <p>Next: $<span class="upgrade-tooltip-next-value">75</span></p>
@@ -85,16 +83,14 @@
                         Ban condoms
                     </button>
 
-                    <div class="upgrade-tooltip" id="tooltip-policy" role="tooltip">
+                    <div class="upgrade-tooltip" id="tooltip-policy" role="tooltip" hidden>
                         Passive births per 5 seconds
                         <p>Current: +<span class="upgrade-tooltip-current-value">0</span></p>
                         <p>Next: +<span class="upgrade-tooltip-next-value">6</span></p>
                     </div>
                 </li>
             </ul>
-        </section>
-
-
+        </section> <!-- class "open" makes it open -->
         <section class="planet-section" aria-label="Main click area" >
             <button class="planet-button" type="button" aria-describedby="planet-hint" aria-label="Planet click">
                 <img src="images/mars.png" alt="">
@@ -105,7 +101,7 @@
             </div>
 
             <button class="upgrade-moon-button" type="button" aria-describedby="upgrade-moon-hint" aria-label="Upgrade menu">
-                <img src="images/phobos-hint.png" alt="">
+                <img src="images/phobos.png" alt=""> <!-- phobos-hint.png is for start tutorial -->
             </button>
             <div class="upgrade-moon-hint" id="upgrade-moon-hint" hidden>
                 <img src="images/hint-arrow.png" alt="">
@@ -113,7 +109,7 @@
             </div>
 
             <button class="guide-moon-button" type="button" aria-describedby="guide-moon-hint" aria-label="Guide">
-                <img src="images/deimos-hint.png" alt="">
+                <img src="images/deimos.png" alt=""> <!-- deimos-hint.png is for start tutorial -->
             </button>
             <div class="guide-moon-hint" id="guide-moon-hint" hidden>
                 <img src="images/hint-arrow.png" alt="">
