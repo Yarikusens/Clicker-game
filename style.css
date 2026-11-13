@@ -164,3 +164,34 @@ li > button {
 }
 
 /*#endregion */
+
+/*#region 4. UPGRADE TOOLTIPS*/
+
+.upgrade-tooltip{
+    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+    text-align: center;
+    border-radius: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(25px);
+
+/*hidden by default*/
+visibility:hidden;
+opacity: 0;
+transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.upgrade-tooltip p{
+    margin-top: 0.4rem;
+}
+
+/*shown when hovered over*/
+.upgrade-button:hover + .upgrade-tooltip,
+.upgrade-button:focus-visible + .upgrade-tooltip{
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/*#endregion*/
+

@@ -1,158 +1,238 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clicker Game</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <main>
-        <h1>
-            Clicker Game
-        </h1>
+      <h1>Clicker Game</h1>
 
-        <section class="upgrade-section" aria-label="Upgrade panel"> <!-- in order to make the section toggle class "open" -->
-            <ul class="upgrade-list">
-                <li id="upgrade-one"> <!-- "id="upgrade-one"" could be replaced with "data-upgrade="call-to-action"" -->
-                    <h3 id="upgrade-one-title">Call to action -
-                        <span class="upgrade-title-price">
-                            $10K
-                        </span>
-                    </h3>
+      <section class="upgrade-section open" aria-label="Upgrade panel">
+        <!-- in order to make the section toggle class "open" -->
+        <ul class="upgrade-list">
+          <li id="upgrade-one">
+            <!-- "id="upgrade-one"" could be replaced with "data-upgrade="call-to-action"" -->
+            <h3 id="upgrade-one-title">
+              Call to action -
+              <span class="upgrade-title-price"> $10K </span>
+            </h3>
 
-                    <button class="upgrade-button" type="button" aria-labelledby="upgrade-one-title" aria-describedby="tooltip-call-to-action">
-                        Megaphone
-                    </button>
-
-                    <div class="upgrade-tooltip" id="tooltip-call-to-action" role="tooltip" hidden>
-                        Population growth per click
-                        <p>Current: +<span class="upgrade-tooltip-current-value">1</span></p>
-                        <p>Next: +<span class="upgrade-tooltip-next-value">2</span></p>
-                    </div>
-                </li>
-
-                <li id="upgrade-two">
-                    <h3 id="upgrade-two-title">Birth rate -
-                        <span class="upgrade-title-price">
-                            $5K
-                        </span>
-                    </h3>
-
-                    <button class="upgrade-button" type="button" aria-labelledby="upgrade-two-title" aria-describedby="tooltip-birth-rate">
-                        Hire a midwife
-                    </button>
-
-                    <div class="upgrade-tooltip" id="tooltip-birth-rate" role="tooltip" hidden>
-                        Number of babies per 5 seconds
-                        <p>Current: +<span class="upgrade-tooltip-current-value">0</span></p>
-                        <p>Next: +<span class="upgrade-tooltip-next-value">1</span></p>
-                    </div>
-                </li>
-
-                <li id="upgrade-three">
-                    <h3 id="upgrade-three-title">
-                        Economy -
-                        <span class="upgrade-title-price">
-                            $10K
-                        </span>
-                    </h3>
-
-                    <button class="upgrade-button" type="button" aria-labelledby="upgrade-three-title" aria-describedby="tooltip-economy">
-                        Greenhouses
-                    </button>
-
-                    <div class="upgrade-tooltip" id="tooltip-economy" role="tooltip" hidden>
-                        Person's earnings per second
-                        <p>Current: $<span class="upgrade-tooltip-current-value">50</span></p>
-                        <p>Next: $<span class="upgrade-tooltip-next-value">75</span></p>
-                    </div>
-                </li>
-
-                <li id="upgrade-four">
-                    <h3 id="upgrade-four-title">Policy -
-                        <span class="upgrade-title-price">
-                            $150K
-                        </span>
-                    </h3>
-
-                    <button class="upgrade-button" type="button" aria-labelledby="upgrade-four-title" aria-describedby="tooltip-policy">
-                        Ban condoms
-                    </button>
-
-                    <div class="upgrade-tooltip" id="tooltip-policy" role="tooltip" hidden>
-                        Passive births per 5 seconds
-                        <p>Current: +<span class="upgrade-tooltip-current-value">0</span></p>
-                        <p>Next: +<span class="upgrade-tooltip-next-value">6</span></p>
-                    </div>
-                </li>
-            </ul>
-        </section> <!-- class "open" makes it open -->
-        <section class="planet-section" aria-label="Main click area" >
-            <button class="planet-button" type="button" aria-describedby="planet-hint" aria-label="Planet click">
-                <img src="images/mars.png" alt="">
+            <button
+              class="upgrade-button"
+              type="button"
+              aria-labelledby="upgrade-one-title"
+              aria-describedby="tooltip-call-to-action"
+            >
+              Megaphone
             </button>
-            <div class="planet-hint" id="planet-hint" hidden>
-                <img src="images/hint-arrow.png" alt="">
-                Click your planet to increase population
-            </div>
 
-            <button class="upgrade-moon-button" type="button" aria-describedby="upgrade-moon-hint" aria-label="Upgrade menu">
-                <img src="images/phobos.png" alt=""> <!-- phobos-hint.png is for start tutorial -->
-            </button>
-            <div class="upgrade-moon-hint" id="upgrade-moon-hint" hidden>
-                <img src="images/hint-arrow.png" alt="">
-                Opens upgrade panel
+            <div
+              class="upgrade-tooltip"
+              id="tooltip-call-to-action"
+              role="tooltip"
+              hidden
+            >
+              Population growth per click
+              <p>
+                Current: +<span class="upgrade-tooltip-current-value">1</span>
+              </p>
+              <p>Next: +<span class="upgrade-tooltip-next-value">2</span></p>
             </div>
+          </li>
 
-            <button class="guide-moon-button" type="button" aria-describedby="guide-moon-hint" aria-label="Guide">
-                <img src="images/deimos.png" alt=""> <!-- deimos-hint.png is for start tutorial -->
+          <li id="upgrade-two">
+            <h3 id="upgrade-two-title">
+              Birth rate -
+              <span class="upgrade-title-price"> $5K </span>
+            </h3>
+
+            <button
+              class="upgrade-button"
+              type="button"
+              aria-labelledby="upgrade-two-title"
+              aria-describedby="tooltip-birth-rate"
+            >
+              Hire a midwife
             </button>
-            <div class="guide-moon-hint" id="guide-moon-hint" hidden>
-                <img src="images/hint-arrow.png" alt="">
-                Opens the game guide
+
+            <div
+              class="upgrade-tooltip"
+              id="tooltip-birth-rate"
+              role="tooltip"
+             hidden
+            >
+              Number of babies per 5 seconds
+              <p>
+                Current: +<span class="upgrade-tooltip-current-value">0</span>
+              </p>
+              <p>Next: +<span class="upgrade-tooltip-next-value">1</span></p>
             </div>
-        </section>
-        <section class="status-section" aria-label="Colony status">
-            <p class="status-content">
-                <span id="status-population">10</span> people | $<span id="status-balance">500</span>
-            </p>
-        </section>
+          </li>
+
+          <li id="upgrade-three">
+            <h3 id="upgrade-three-title">
+              Economy -
+              <span class="upgrade-title-price"> $10K </span>
+            </h3>
+
+            <button
+              class="upgrade-button"
+              type="button"
+              aria-labelledby="upgrade-three-title"
+              aria-describedby="tooltip-economy"
+            >
+              Greenhouses
+            </button>
+
+            <div
+              class="upgrade-tooltip"
+              id="tooltip-economy"
+              role="tooltip"
+              hidden
+            >
+              Person's earnings per second
+              <p>
+                Current: $<span class="upgrade-tooltip-current-value">50</span>
+              </p>
+              <p>Next: $<span class="upgrade-tooltip-next-value">75</span></p>
+            </div>
+          </li>
+
+          <li id="upgrade-four">
+            <h3 id="upgrade-four-title">
+              Policy -
+              <span class="upgrade-title-price"> $150K </span>
+            </h3>
+
+            <button
+              class="upgrade-button"
+              type="button"
+              aria-labelledby="upgrade-four-title"
+              aria-describedby="tooltip-policy"
+            >
+              Ban condoms
+            </button>
+
+            <div
+              class="upgrade-tooltip"
+              id="tooltip-policy"
+              role="tooltip"
+              hidden
+            >
+              Passive births per 5 seconds
+              <p>
+                Current: +<span class="upgrade-tooltip-current-value">0</span>
+              </p>
+              <p>Next: +<span class="upgrade-tooltip-next-value">6</span></p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!-- class "open" makes it open -->
+      <section class="planet-section" aria-label="Main click area">
+        <button
+          class="planet-button"
+          type="button"
+          aria-describedby="planet-hint"
+          aria-label="Planet click"
+        >
+          <img src="images/mars.png" alt="" />
+        </button>
+        <div class="planet-hint" id="planet-hint" hidden>
+          <img src="images/hint-arrow.png" alt="" />
+          Click your planet to increase population
+        </div>
+
+        <button
+          class="upgrade-moon-button"
+          type="button"
+          aria-describedby="upgrade-moon-hint"
+          aria-label="Upgrade menu"
+        >
+          <img src="images/phobos.png" alt="" />
+          <!-- phobos-hint.png is for start tutorial -->
+        </button>
+        <div class="upgrade-moon-hint" id="upgrade-moon-hint" hidden>
+          <img src="images/hint-arrow.png" alt="" />
+          Opens upgrade panel
+        </div>
+
+        <button
+          class="guide-moon-button"
+          type="button"
+          aria-describedby="guide-moon-hint"
+          aria-label="Guide"
+        >
+          <img src="images/deimos.png" alt="" />
+          <!-- deimos-hint.png is for start tutorial -->
+        </button>
+        <div class="guide-moon-hint" id="guide-moon-hint" hidden>
+          <img src="images/hint-arrow.png" alt="" />
+          Opens the game guide
+        </div>
+      </section>
+      <section class="status-section" aria-label="Colony status">
+        <p class="status-content">
+          <span id="status-population">10</span> people | $<span
+            id="status-balance"
+            >500</span
+          >
+        </p>
+      </section>
     </main>
     <aside hidden>
-        <section id="guide" >
-            <h2 class="left-aside-title">
-                Congratulations!
-            </h2>
-            <p class="left-aside-content">
-                You have been chosen to lead the Mars colonization program! Your goal is to grow your colony
-                as large as possible. Click the planet to encourage reproduction: every person
-                earns you $50 per second. Spend that money on upgrades, so your population
-                grows faster and your people work more efficiently
-            </p>
-        </section>
-        <section id="glossary">
-            <h2 class="left-aside-title">
-                Upgrade descriptions
-            </h2>
-            <dl class="left-aside-content">
-                <div>
-                    <dt>Call to action</dt> <dd>is your gift for persuading colonists to start families, spreading the message far and wide; gives more babies per click</dd>
-                </div>
-                <div>
-                    <dt>Birth rate</dt> <dd>is the medical care and technology that help more babies be born into the colony; gives more babies passively</dd>
-                </div>
-                <div>
-                    <dt>Economy</dt> <dd>is the mines, farms and markets that make each colonist’s labor worth more than before; increases the value of work</dd>
-                </div>
-                <div class="right-aside-content-evil">
-                    <dt>Policy</dt> <dd>is your iron-fisted code of laws and decrees that pressures colonists into having larger families; compels people to reproduce</dd>
-                </div>
-            </dl>
-        </section>
+      <section id="guide">
+        <h2 class="left-aside-title">Congratulations!</h2>
+        <p class="left-aside-content">
+          You have been chosen to lead the Mars colonization program! Your goal
+          is to grow your colony as large as possible. Click the planet to
+          encourage reproduction: every person earns you $50 per second. Spend
+          that money on upgrades, so your population grows faster and your
+          people work more efficiently
+        </p>
+      </section>
+      <section id="glossary">
+        <h2 class="left-aside-title">Upgrade descriptions</h2>
+        <dl class="left-aside-content">
+          <div>
+            <dt>Call to action</dt>
+            <dd>
+              is your gift for persuading colonists to start families, spreading
+              the message far and wide; gives more babies per click
+            </dd>
+          </div>
+          <div>
+            <dt>Birth rate</dt>
+            <dd>
+              is the medical care and technology that help more babies be born
+              into the colony; gives more babies passively
+            </dd>
+          </div>
+          <div>
+            <dt>Economy</dt>
+            <dd>
+              is the mines, farms and markets that make each colonist’s labor
+              worth more than before; increases the value of work
+            </dd>
+          </div>
+          <div class="right-aside-content-evil">
+            <dt>Policy</dt>
+            <dd>
+              is your iron-fisted code of laws and decrees that pressures
+              colonists into having larger families; compels people to reproduce
+            </dd>
+          </div>
+        </dl>
+      </section>
     </aside>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
