@@ -25,6 +25,7 @@
               <span class="upgrade-title-price"> $10K </span>
             </h3>
 
+<<<<<<< HEAD
             <button
               class="upgrade-button"
               type="button"
@@ -32,17 +33,16 @@
               aria-describedby="tooltip-call-to-action"
             >
               Megaphone
-            </button>
+=======
+                    <button class="upgrade-button" type="button" aria-labelledby="upgrade-one-title" aria-describedby="tooltip-call-to-action">
+                        Megaphone
 
-            <div
-              class="upgrade-tooltip"
-              id="tooltip-call-to-action"
-              role="tooltip"
-              hidden
-            >
-              Population growth per click
-              <p>
-                Current: +<span class="upgrade-tooltip-current-value">1</span>
+                    <div class="upgrade-tooltip" id="tooltip-call-to-action" role="tooltip" hidden>
+                        Population growth per click
+                        <p>Current: +<span class="upgrade-tooltip-current-value">1</span></p>
+                        <p>Next: +<span class="upgrade-tooltip-next-value">2</span></p>
+                    </div>
+                </li>
               </p>
               <p>Next: +<span class="upgrade-tooltip-next-value">2</span></p>
             </div>
@@ -75,6 +75,7 @@
               </p>
               <p>Next: +<span class="upgrade-tooltip-next-value">1</span></p>
             </div>
+<<<<<<< HEAD
           </li>
 
           <li id="upgrade-three">
@@ -236,3 +237,43 @@
     <script src="script.js"></script>
   </body>
 </html>
+=======
+        </section>
+        <section class="status-section" aria-label="Colony status">
+            <p class="status-content">
+                <span id="status-population">10</span> people | $<span id="status-balance">500</span>
+            </p>
+        </section>
+        <aside class="guide-section" aria-label="Introduction panel">
+            <h2 class="left-aside-title">
+                Congratulations!
+            </h2>
+            <p class="left-aside-content">
+                You have been chosen to lead the Mars colonization program! Your goal is to grow your colony
+                as large as possible. Click the planet to encourage reproduction: every person
+                earns you $50 per second. Spend that money on upgrades, so your population
+                grows faster and your people work more efficiently
+            </p>
+        </aside>
+        <aside class="glossary-section" aria-label="Upgrade description panel">
+            <dl class="right-aside-content">
+                <div>
+                    <dt>Call to action</dt> <dd>is your gift for persuading colonists to start families, spreading the message far and wide; gives more babies per click</dd>
+                </div>
+                <div>
+                    <dt>Birth rate</dt> <dd>is the medical care and technology that help more babies be born into the colony; gives more babies passively</dd>
+                </div>
+                <div>
+                    <dt>Economy</dt> <dd>is the mines, farms and markets that make each colonist’s labor worth more than before; increases the value of work</dd>
+                </div>
+                <div class="right-aside-content-evil">
+                    <dt>Policy</dt> <dd>is your iron-fisted code of laws and decrees that pressures colonists into having larger families; compels people to reproduce</dd>
+                </div>
+            </dl>
+        </aside>
+    </main>
+    <script src="java-script/script.js"></script>
+    <script src="java-script/viewController.js"></script>
+</body>
+</html>
+>>>>>>> 19d875309b148f24a45333cdcdb38380b545040a
