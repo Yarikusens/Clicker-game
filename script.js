@@ -101,3 +101,9 @@ const policyUpgrades= [
     {name: "Mandatory Childbearing", value: 3, price: 8e9},
     {name: "Make Everyone Pregnant", value: 9, price: 2.5e11}
 ];
+
+//Upgrades info on the page//
+
+function showCallToAction(){
+    callCurrentText,textContent= populationPerClick;
+}
