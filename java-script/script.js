@@ -2,7 +2,7 @@
 let population= 10;
 let balance= 0;
 let populationPerClick= 1;
-let moneyPerperson=50;
+let moneyPerPerson=50;
 let birthsPerInterval= 0;
 let policyBirthsPerInterval = 0;
 const birthInterval= 5;
@@ -13,11 +13,10 @@ const populationText= document.getElementById("status-population");
 const balanceText= document.getElementById("status-balance");
 
 //The current numbers in status bar//
-function updateStatus() 
+function updateStatus()
 {
     populationText.textContent = population;
     balanceText.textContent = balance;
-    
 }
 
 //Should run on every click on the planet//
@@ -30,7 +29,7 @@ function clickPlanet(){
 
 //income that runs once per second//
 function earnMoney(){
-    balance= balance+moneyPerperson*population;
+    balance= balance+moneyPerPerson*population;
     updateStatus();
 }
 
@@ -42,9 +41,6 @@ function passiveBirths(){
 
 //Once planet button is clicked, run clickPlanet//
 planetButton.addEventListener("click", clickPlanet);
-
-//Click planet for money//
-planetButton.addEventListener("click",clickPlanet);
 
 //Run earnMoney//
 setInterval(earnMoney, 1000);
@@ -101,9 +97,3 @@ const policyUpgrades= [
     {name: "Mandatory Childbearing", value: 3, price: 8e9},
     {name: "Make Everyone Pregnant", value: 9, price: 2.5e11}
 ];
-
-//Upgrades info on the page//
-
-function showCallToAction(){
-    callCurrentText,textContent= populationPerClick;
-}

@@ -133,13 +133,15 @@ h1 { /* Hides the main title on the page visually, but makes it available for sc
 
 .upgrade-section {
     grid-area: upgrade;
-    min-height: 0;
-    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+    visibility: hidden;
     transform: translateY(-100%);
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, visibility 0.5s ease;
 }
 
 .upgrade-section.open {
+    visibility: visible;
     transform: translateY(0);
 }
 
@@ -167,6 +169,7 @@ h3 {
 }
 
 li > button {
+    pointer-events: auto;
     color: white;
     font-size: 2em;
     font-weight: 400;
@@ -181,23 +184,22 @@ li > button {
     backdrop-filter: blur(25px);
 }
 
-/*#endregion */
-
-/*#region 4. UPGRADE TOOLTIPS*/
-
 .upgrade-tooltip{
     margin-top: 1rem;
     padding: 1rem 1.5rem;
-    font-size: 1.4rem;
+    font-size: 2.25rem;
     text-align: center;
-    border-radius: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 3.125rem;
+    border: solid white;
+    background-color: rgba(255, 255, 255, 0.1);
     -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
+    pointer-events: none;
 
-/*hidden by default*/
-visibility:hidden;
-opacity: 0;
-transition: opacity 0.2s ease, visibility 0.2s ease;
+    /*hidden by default*/
+    visibility:hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
 .upgrade-tooltip p{
@@ -207,9 +209,85 @@ transition: opacity 0.2s ease, visibility 0.2s ease;
 /*shown when hovered over*/
 .upgrade-button:hover + .upgrade-tooltip,
 .upgrade-button:focus-visible + .upgrade-tooltip{
-    visibility: visible !important;
-    opacity: 1 !important;
+    visibility: visible;
+    opacity: 1;
 }
 
-/*#endregion*/
+/*#endregion */
 
+/*#region 4. GUIDE SECTION */
+
+main.guide-open .guide-section {
+    grid-area: guide;
+    margin: 3rem 0 3rem 3rem;
+}
+
+main.guide-open .glossary-section {
+    grid-area: glossary;
+    margin: 3rem 3rem 3rem 0;
+}
+
+.guide-section,
+.glossary-section {
+    visibility: hidden;
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    border-radius: 100px;
+    border: solid white;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
+    transition: transform 0.5s ease;
+}
+
+.guide-section {
+    transform: translateX(-150%);
+}
+
+.glossary-section {
+    transform: translateX(150%);
+}
+
+.guide-section.open,
+.glossary-section.open {
+    transform: translateX(0);
+}
+
+main.guide-open .guide-section,
+main.guide-open .glossary-section {
+    visibility: visible;
+}
+
+.left-aside-title {
+    font-size: 2.375rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.left-aside-content {
+    font-size: 2.125rem;
+    width: 90%;
+    justify-self: center;
+    font-weight: 300;
+    text-align: center;
+}
+
+.right-aside-content {
+    font-size: 1.875rem;
+    font-weight: 300;
+    text-align: justify;
+}
+
+dt {
+    text-decoration: underline;
+}
+
+dd, dt {
+    display: inline;
+}
+
+.right-aside-content-evil {
+    color: red;
+}
+
+/*#endregion */
