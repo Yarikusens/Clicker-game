@@ -6,6 +6,13 @@ const upgradeSec = document.querySelector(".upgrade-section");
 const guideSec = document.querySelector(".guide-section");
 const glossarySec = document.querySelector(".glossary-section");
 
+const planetHint = document.querySelector(".planet-hint");
+const upgradeButtonHint = document.querySelector(".upgrade-moon-hint");
+const guideButtonHint = document.querySelector(".guide-moon-hint");
+
+
+
+
 let view = 0; // 0 - no menus, 1 - upgrade menu, 2 - guide panels
 
 upgradeMoonBtn.addEventListener("click", (e) => {
@@ -49,5 +56,18 @@ guideMoonBtn.addEventListener("click", (e) => {
         setTimeout(() => { guideSec.classList.add("open") }, 500);
         setTimeout(() => { glossarySec.classList.add("open") }, 500);
         view = 2;
+    }
+})
+
+
+guideMoonBtn.addEventListener("click", () => {
+    if (!planetHint.hasAttribute("hidden")){
+        planetHint.setAttribute("hidden", "");
+    }
+    if (!guideButtonHint.hasAttribute("hidden")){
+        guideButtonHint.setAttribute("hidden", "");
+    }
+    if (!upgradeButtonHint.hasAttribute("hidden")){
+        upgradeButtonHint.setAttribute("hidden", "");
     }
 })
