@@ -104,3 +104,28 @@ const policyUpgrades= [
     {name: "Mandatory Childbearing", value: 3, price: 8e9},
     {name: "Make Everyone Pregnant", value: 9, price: 2.5e11}
 ];
+
+
+
+//                                       SAVING PROGRESS
+
+window.addEventListener("beforeunload", saveProgress);
+window.addEventListener("load", loadProgress);
+
+function saveProgress(){
+    localStorage.setItem("population", population);
+    localStorage.setItem("balance", balance);
+}
+
+function loadProgress(){
+    population = Number(localStorage.getItem("population")) || 0;
+    balance = Number(localStorage.getItem("balance")) || 0;
+    updateStatus();
+}
+
+function resetProgress(){
+    population = 0;
+    balance = 0; 
+    saveProgress();
+    updateStatus();
+}
