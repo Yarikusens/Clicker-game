@@ -14,48 +14,65 @@ const guideButtonHint = document.querySelector(".guide-moon-hint");
 
 
 let view = 0; // 0 - no menus, 1 - upgrade menu, 2 - guide panels
+let buttonBlocked = false;
 
 upgradeMoonBtn.addEventListener("click", (e) => {
-    if(view === 1){
-        setTimeout(() => { main.classList.remove("upgrade-open") }, 500);
-        upgradeSec.classList.remove("open");
-        view = 0;
-    }
-    else if(view === 0){
-        main.classList.add("upgrade-open");
-        upgradeSec.classList.add("open");
-        view = 1;
-    }
-    else{
-        guideSec.classList.remove("open");
-        glossarySec.classList.remove("open");
-        setTimeout(() => { main.classList.remove("guide-open") }, 500);
-        setTimeout(() => { main.classList.add("upgrade-open") }, 500);
-        setTimeout(() => { upgradeSec.classList.add("open") }, 500);
-        view = 1;
+    if(buttonBlocked === false){
+        if(view === 1){
+            buttonBlocked = true;
+            setTimeout(() => { main.classList.remove("upgrade-open") }, 500);
+            upgradeSec.classList.remove("open");
+            view = 0;
+            setTimeout(() => { buttonBlocked = false }, 500);
+        }
+        else if(view === 0){
+            buttonBlocked = true;
+            main.classList.add("upgrade-open");
+            upgradeSec.classList.add("open");
+            view = 1;
+            setTimeout(() => { buttonBlocked = false }, 500);
+        }
+        else{
+            buttonBlocked = true;
+            guideSec.classList.remove("open");
+            glossarySec.classList.remove("open");
+            setTimeout(() => { main.classList.remove("guide-open") }, 500);
+            setTimeout(() => { main.classList.add("upgrade-open") }, 500);
+            setTimeout(() => { upgradeSec.classList.add("open") }, 500);
+            view = 1;
+            setTimeout(() => { buttonBlocked = false }, 1000);
+        }
     }
 })
 
 guideMoonBtn.addEventListener("click", (e) => {
-    if(view === 2){
-        setTimeout(() => { main.classList.remove("guide-open") }, 500);
-        guideSec.classList.remove("open");
-        glossarySec.classList.remove("open");
-        view = 0;
-    }
-    else if(view === 0){
-        main.classList.add("guide-open");
-        guideSec.classList.add("open");
-        glossarySec.classList.add("open");
-        view = 2;
-    }
-    else{
-        upgradeSec.classList.remove("open");
-        setTimeout(() => { main.classList.remove("upgrade-open") }, 500);
-        setTimeout(() => { main.classList.add("guide-open") }, 500);
-        setTimeout(() => { guideSec.classList.add("open") }, 500);
-        setTimeout(() => { glossarySec.classList.add("open") }, 500);
-        view = 2;
+    if (buttonBlocked === false){
+        if(view === 2){
+            buttonBlocked = true;
+            setTimeout(() => { main.classList.remove("guide-open") }, 500);
+            guideSec.classList.remove("open");
+            glossarySec.classList.remove("open");
+            view = 0;
+            setTimeout(() => { buttonBlocked = false }, 500);
+        }
+        else if(view === 0){
+            buttonBlocked = true;
+            main.classList.add("guide-open");
+            guideSec.classList.add("open");
+            glossarySec.classList.add("open");
+            view = 2;
+            setTimeout(() => { buttonBlocked = false }, 500);
+        }
+        else{
+            buttonBlocked = true;
+            upgradeSec.classList.remove("open");
+            setTimeout(() => { main.classList.remove("upgrade-open") }, 500);
+            setTimeout(() => { main.classList.add("guide-open") }, 500);
+            setTimeout(() => { guideSec.classList.add("open") }, 500);
+            setTimeout(() => { glossarySec.classList.add("open") }, 500);
+            view = 2;
+            setTimeout(() => { buttonBlocked = false }, 1000);
+        }
     }
 })
 
