@@ -10,7 +10,7 @@ const planetHint = document.querySelector(".planet-hint");
 const upgradeButtonHint = document.querySelector(".upgrade-moon-hint");
 const guideButtonHint = document.querySelector(".guide-moon-hint");
 
-
+let hasBeenRead = false;
 
 
 let view = 0; // 0 - no menus, 1 - upgrade menu, 2 - guide panels
@@ -76,8 +76,13 @@ guideMoonBtn.addEventListener("click", (e) => {
     }
 })
 
+window.addEventListener("load", () => {
+    if (hasBeenRead == false)
+        hideStartmenu()
+});
+guideMoonBtn.addEventListener("click", hideStartMenu())
 
-guideMoonBtn.addEventListener("click", () => {
+function hideStartmenu(){
     if (!planetHint.hasAttribute("hidden")){
         planetHint.setAttribute("hidden", "");
     }
@@ -87,4 +92,5 @@ guideMoonBtn.addEventListener("click", () => {
     if (!upgradeButtonHint.hasAttribute("hidden")){
         upgradeButtonHint.setAttribute("hidden", "");
     }
-})
+    hasBeenRead = true;
+}
