@@ -1,14 +1,16 @@
 //Games memory//
-let population= 0;
+let population= 10;
 let balance= 0;
 let populationPerClick= 1;
 let moneyPerPerson=50;
 let birthsPerInterval= 0;
 let policyBirthsPerInterval = 0;
 const birthInterval= 5;
+let guideHasBeenOpened= false;
 
 //Elements on the page//
 const planetButton= document.querySelector(".planet-button");
+const guideMoonButton = document.querySelector(".guide-moon-button");
 const populationText= document.getElementById("status-population");
 const balanceText= document.getElementById("status-balance");
 
@@ -42,8 +44,13 @@ function passiveBirths(){
 //Once planet button is clicked, run clickPlanet//
 planetButton.addEventListener("click", clickPlanet);
 
-//Run earnMoney//
-setInterval(earnMoney, 1000);
+//You don't earn money until you open the guide for the first time//
+guideMoonButton.addEventListener("click", () => {
+    if (guideHasBeenOpened === false){
+        guideHasBeenOpened = true;
+        setInterval(earnMoney, 1000);
+    }
+})
 
 //setInterval//
 
