@@ -8,6 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
     
 </head>
 <body>
@@ -120,8 +121,11 @@
         </section>
         <section class="status-section" aria-label="Colony status">
             <p class="status-content">
-                <span id="status-population">10</span> people | $<span id="status-balance">0</span>
+                <a id="flag" target="_blank"></a> <span id="status-population">10</span> people | $<span id="status-balance">0</span>
             </p>
+            <div class="flag-window">
+                Your population has reached the level of <span id="flag-window-span">Liechtenstein</span>
+            </div>
         </section>
         <aside class="guide-section" aria-label="Introduction panel">
             <h2 class="left-aside-title">
@@ -153,5 +157,6 @@
     </main>
     <script src="java-script/script.js"></script>
     <script src="java-script/viewController.js"></script>
+    <script src="java-script/flagController.js"></script>
 </body>
 </html>

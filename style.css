@@ -11,7 +11,7 @@ html, body, main {
     width: 100%;
     height: 100%;
     color: white;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Space Grotesk", sans-serif, "Noto Color Emoji";
 }
 
 * {
@@ -317,9 +317,9 @@ dd, dt {
 
 .planet-hint img{
     position: fixed;
-    top: calc(50% - 21rem);
-    right: calc(50% - 14rem);
-    width: 13rem;
+    top: calc(50% - 19rem);
+    right: calc(50% - 10.5rem);
+    width: 6.5rem;
     height: auto;
     transform: scaleX(-1) rotate(100deg);
 }
@@ -333,9 +333,9 @@ dd, dt {
 
 .upgrade-moon-hint img{
     position: fixed;
-    top: calc(50% - 19rem);
-    left: calc(50% - 34rem);
-    width: 13rem;
+    top: calc(50% - 17rem);
+    left: calc(50% - 30.5rem);
+    width: 6.5rem;
     height: auto;
     transform: scaleX(1) rotate(70deg);
 }
@@ -350,9 +350,9 @@ dd, dt {
 
 .guide-moon-hint img{
     position: fixed;
-    top: calc(50% + 11rem);
-    right: calc(50% - 34rem);
-    width: 13rem;
+    top: calc(50% + 13rem);
+    right: calc(50% - 30.5rem);
+    width: 6.5rem;
     height: auto;
     transform: scaleX(1) rotate(-100deg);
 }
@@ -362,4 +362,36 @@ dd, dt {
     left: calc(50% + 35rem);
 }
 
+/*#endregion */
+
+/*#region 6. FLAGS */
+#flag{
+    text-decoration: none;
+}
+.flag-window {
+    position: relative;
+    bottom: 200%;
+    justify-self: center;
+    width: 500px;
+    padding: 0.5rem 0 0.5rem 0;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 3.125rem;
+    border: solid white;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
+    pointer-events: none;
+
+    /*hidden by default*/
+    visibility:hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.status-content:has(#flag:hover) + .flag-window,
+.status-content:has(#flag:focus-visible) + .flag-window{
+    visibility: visible;
+    opacity: 1;
+}
 /*#endregion */
