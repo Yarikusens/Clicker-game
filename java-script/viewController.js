@@ -10,9 +10,6 @@ const planetHint = document.querySelector(".planet-hint");
 const upgradeButtonHint = document.querySelector(".upgrade-moon-hint");
 const guideButtonHint = document.querySelector(".guide-moon-hint");
 
-let hasBeenRead = false;
-
-
 let view = 0; // 0 - no menus, 1 - upgrade menu, 2 - guide panels
 let buttonBlocked = false;
 
@@ -77,12 +74,15 @@ guideMoonBtn.addEventListener("click", (e) => {
 })
 
 window.addEventListener("load", () => {
-    if (hasBeenRead == false)
-        hideStartmenu()
+    if (localStorage.getItem("guided") === "true"){
+        hideStartMenu();
+        setInterval(earnMoney, 1000);
+    }
 });
-guideMoonBtn.addEventListener("click", hideStartMenu())
 
-function hideStartmenu(){
+guideMoonBtn.addEventListener("click", hideStartMenu);
+
+function hideStartMenu(){
     if (!planetHint.hasAttribute("hidden")){
         planetHint.setAttribute("hidden", "");
     }
@@ -92,5 +92,9 @@ function hideStartmenu(){
     if (!upgradeButtonHint.hasAttribute("hidden")){
         upgradeButtonHint.setAttribute("hidden", "");
     }
-    hasBeenRead = true;
+    if (localStorage.getItem("guided") !== "true")
+    {
+        setInterval(earnMoney, 1000);
+        localStorage.setItem("guided", "true");
+    }
 }

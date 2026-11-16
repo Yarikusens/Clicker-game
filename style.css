@@ -127,6 +127,15 @@ h1 { /* Hides the main title on the page visually, but makes it available for sc
     font-size: 2.4rem;
 }
 
+.undraggable {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+
 /*#endregion */
 
 
