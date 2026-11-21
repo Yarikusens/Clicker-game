@@ -404,3 +404,17 @@ dd, dt {
     opacity: 1;
 }
 /*#endregion */
+
+/*#region 7. CLICKFEEDBACK*/
+@keyframes jump {
+    0%   { translate: 0 0;     scale: 1; }
+    30%  { translate: 0 -14px; scale: 1.05; }
+    60%  { translate: 0 0;     scale: 0.96; }
+    100% { translate: 0 0;     scale: 1; }
+}
+
+.planet-button.jump,
+.upgrade-moon-button.jump,
+.guide-moon-button.jump {
+    animation: jump 0.25s ease-out;
+}

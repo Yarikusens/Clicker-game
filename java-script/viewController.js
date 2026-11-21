@@ -98,3 +98,66 @@ function hideStartMenu(){
         localStorage.setItem("guided", "true");
     }
 }
+
+/*Click feedback*/
+
+const feedbackButtons= document.querySelectorAll(
+    ".planet-button, .upgrade-moon-button, .guide-moon-button"
+);
+
+/*Sound*/
+let audioContext= null;
+function playClickSound(frequency){
+    if(audioContext=== null){
+        audioContext= new(window.AudioContext||window.webkitAudioContext)();
+    }
+
+
+const oscillator = audioContext.createOscillator();
+const gain= audioContext.createGain();
+
+oscillator.type= "sine";
+oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+
+/*Pop sound*/
+
+oscillator.frequency.setValueAtTime(
+    frequency / 2,
+    audioContext.currentTime+ 0.1
+);
+
+
+gain.gain.setValueAtTime(0.2, audioContext.currentTime);
+gain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.1);
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + 0.1);
+}
+
+/*Jump*/
+function jump(button){
+    button.classList.remove("jump");
+    void button.offsetWidth;
+    button.classList.add("jump");
+}
+
+/*Connects everything*/
+feedbackButtons.forEach((button)=>{
+    button.addEventListener("click", ()=>{
+    const isPLanet= button.classList.contains("planet-button");
+    let pitch;
+    if(isPLanet===true){
+        pitch= 520;
+    }else{
+        pitch= 360;
+    }
+    playClickSound(pitch);
+    jump(button);})
+});
+
+button.addEventListener("animationend", ()=>{
+    button.classList.remove("jump");
+});
+
