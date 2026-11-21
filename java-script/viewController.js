@@ -76,9 +76,15 @@ guideMoonBtn.addEventListener("click", (e) => {
 window.addEventListener("load", () => {
     if (localStorage.getItem("guided") === "true"){
         hideStartMenu();
+        startOrbiting();
         setInterval(earnMoney, 1000);
     }
 });
+
+function startOrbiting() {
+    document.getElementById("orbit1").classList.add("orbit");
+    document.getElementById("orbit2").classList.add("orbit");
+}
 
 guideMoonBtn.addEventListener("click", hideStartMenu);
 
@@ -96,6 +102,7 @@ function hideStartMenu(){
     {
         setInterval(earnMoney, 1000);
         localStorage.setItem("guided", "true");
+        startOrbiting();
     }
 }
 

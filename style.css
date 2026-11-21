@@ -98,6 +98,7 @@ h1 { /* Hides the main title on the page visually, but makes it available for sc
     right: calc(50% + 15rem);
     width: 8rem;
     height: 8rem;
+    pointer-events: auto;
 }
 
 .upgrade-moon-button img {
@@ -112,6 +113,7 @@ h1 { /* Hides the main title on the page visually, but makes it available for sc
     right: calc(50% - 23rem);
     width: 5rem;
     height: 5rem;
+    pointer-events: auto;
 }
 
 .guide-moon-button img{
@@ -135,6 +137,50 @@ h1 { /* Hides the main title on the page visually, but makes it available for sc
     -ms-user-select: none;
 }
 
+.gravity-field {
+    position: absolute;
+    pointer-events: none;
+    align-self: center;
+    justify-self: center;
+    top: calc(50%);
+    right: calc(50%);
+    transform: translate(50%, -50%);
+}
+
+.orbit {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    animation: circle 15s linear infinite;
+}
+
+.orbit .upgrade-moon-button, .orbit .guide-moon-button {
+    pointer-events: auto;
+    top: calc(50%);
+    right: calc(50%);
+    transform: translate(50%, -50%);
+}
+
+#orbit1 {
+    animation-delay: -1s;
+}
+
+#orbit2 {
+    animation-delay: -8.5s;
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg)translate(-18rem)rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg)translate(-18rem)rotate(-360deg);
+    }
+}
 
 /*#endregion */
 
@@ -177,6 +223,7 @@ h3 {
     font-weight: 450;
     margin: 0.5em 0 0.5em 0;
     text-align: center;
+    text-wrap: nowrap;
 }
 
 li > button {
@@ -418,3 +465,4 @@ dd, dt {
 .guide-moon-button.jump {
     animation: jump 0.25s ease-out;
 }
+/*#endregion */

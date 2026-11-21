@@ -102,21 +102,26 @@
                 <p>Click your planet to increase population</p>
             </div>
 
-            <button class="upgrade-moon-button" type="button" aria-describedby="upgrade-moon-hint" aria-label="Upgrade menu">
-                <img src="images/phobos.png" alt="" class="undraggable"> <!-- phobos-hint.png is for start tutorial -->
-            </button>
-            <div class="upgrade-moon-hint" id="upgrade-moon-hint" >
-                <img src="images/hint-arrow.png" alt="" class="undraggable">
-                <p>Press to open the upgrade panel</p>
-            </div>
-
-            <button class="guide-moon-button" type="button" aria-describedby="guide-moon-hint" aria-label="Guide">
-                <img src="images/deimos.png" alt="" class="undraggable"> <!-- deimos-hint.png is for start tutorial -->
-            </button>
-            <div class="guide-moon-hint" id="guide-moon-hint" >
-                <img src="images/hint-arrow.png" alt="" class="undraggable">
-                <p>Press to open the game guide</p> 
-                <p id="enter-game"> <u>and continue</u></p>
+            <div class="gravity-field">
+                <div id="orbit1" class=""> <!-- class="orbit" makes the moon orbit. It is done by js code -->
+                    <button class="upgrade-moon-button" type="button" aria-describedby="upgrade-moon-hint" aria-label="Upgrade menu">
+                        <img src="images/phobos.png" alt="" class="undraggable"> <!-- phobos-hint.png is for start tutorial -->
+                    </button>
+                    <div class="upgrade-moon-hint" id="upgrade-moon-hint" >
+                        <img src="images/hint-arrow.png" alt="" class="undraggable">
+                        <p>Press to open the upgrade panel</p>
+                    </div>
+                </div>
+                <div id="orbit2" class=""> <!-- class="orbit" makes the moon orbit. It is done by js code -->
+                    <button class="guide-moon-button" type="button" aria-describedby="guide-moon-hint" aria-label="Guide">
+                        <img src="images/deimos.png" alt="" class="undraggable"> <!-- deimos-hint.png is for start tutorial -->
+                    </button>
+                    <div class="guide-moon-hint" id="guide-moon-hint" >
+                        <img src="images/hint-arrow.png" alt="" class="undraggable">
+                        <p>Press to open the game guide</p>
+                        <p id="enter-game"> <u>and continue</u></p>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="status-section" aria-label="Colony status">
