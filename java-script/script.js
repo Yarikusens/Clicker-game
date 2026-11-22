@@ -132,25 +132,40 @@ for (let i = 0; i < 4; i++) {
 }
 
 function upgradeFunc(upgradeObj){
-    if (upgradeObj.index - 1 === upgradeObj.upgrades.length)
+    if (upgradeObj.index > upgradeObj.upgrades.length - 1)
+    {
+        upgradeObj.btn.classList.add("clicked");
+        setTimeout(() => upgradeObj.btn.classList.remove("clicked"), 500);
+    }
+    else if (upgradeObj.index === upgradeObj.upgrades.length - 1 && balance > upgradeObj.upgrades[upgradeObj.index].price)
     {
         upgradeObj.btn.textContent = "Sold";
-        upgradeObj.title.textContent = "$0";
-        upgradeObj.currentValue.textContent = upgradeObj.upgrades[upgradeObj.index - 1].value;
+        balance -= upgradeObj.upgrades[upgradeObj.index].price
+        upgradeObj.title.textContent = "";
+        upgradeObj.currentValue.textContent = upgradeObj.upgrades[upgradeObj.index].value;
         upgradeObj.nextValue.textContent = "Max";
+        upgradeObj.modifier = upgradeObj.upgrades[upgradeObj.index].value;
+        upgradeObj.btn.classList.add("sold");
+        upgradeObj.btn.classList.add("clicked");
+        setTimeout(() => upgradeObj.btn.classList.remove("clicked"), 500);
+        updateStatus();
+        upgradeObj.index += 1;
     }
     else if (balance > upgradeObj.upgrades[upgradeObj.index].price){
         upgradeObj.index += 1;
         balance -= upgradeObj.upgrades[upgradeObj.index - 1].price
         upgradeObj.btn.textContent = upgradeObj.upgrades[upgradeObj.index].name;
-        upgradeObj.title.textContent = upgradeObj.upgrades[upgradeObj.index].displayPrice;
+        upgradeObj.title.textContent = " - " + upgradeObj.upgrades[upgradeObj.index].displayPrice;
         upgradeObj.currentValue.textContent = upgradeObj.upgrades[upgradeObj.index - 1].value;
         upgradeObj.nextValue.textContent = upgradeObj.upgrades[upgradeObj.index].value;
         upgradeObj.modifier = upgradeObj.index === 0 ? upgradeObj.defaultModifier : upgradeObj.upgrades[upgradeObj.index-1].value;
         updateStatus();
+        upgradeObj.btn.classList.add("bought");
+        setTimeout(() => upgradeObj.btn.classList.remove("bought"), 500);
     }
     else {
-        // make the button red to display that there is not enough money for the upgrade
+        upgradeObj.btn.classList.add("no-money");
+        setTimeout(() => upgradeObj.btn.classList.remove("no-money"), 500);
     }
 }
 
@@ -181,7 +196,7 @@ function loadProgress(){
         upgradeObj.modifier = upgradeObj.index === 0 ? upgradeObj.defaultModifier : upgradeObj.upgrades[upgradeObj.index-1].value;
         upgradeObj.currentValue.textContent = upgradeObj.index === 0 ? upgradeObj.defaultModifier : upgradeObj.upgrades[upgradeObj.index-1].value;
         upgradeObj.btn.textContent = upgradeObj.upgrades[upgradeObj.index].name;
-        upgradeObj.title.textContent = upgradeObj.upgrades[upgradeObj.index].displayPrice;
+        upgradeObj.title.textContent = " - " + upgradeObj.upgrades[upgradeObj.index].displayPrice;
         upgradeObj.nextValue.textContent = upgradeObj.upgrades[upgradeObj.index].value;
     }
     updateStatus();
@@ -193,6 +208,7 @@ function resetProgress(){
     for (let i = 0; i < 4; i++) {
         upgradeContainers[i].index = 0;
     }
+    localStorage.setItem("guided", "false");
     saveProgress();
     updateStatus();
 }

@@ -163,8 +163,3 @@ feedbackButtons.forEach((button)=>{
     playClickSound(pitch);
     jump(button);})
 });
-
-button.addEventListener("animationend", ()=>{
-    button.classList.remove("jump");
-});
-

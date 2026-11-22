@@ -21,6 +21,7 @@ html, body, main {
 
 body {
     background-image: url("images/background.png");
+    background-size: 100% 100%;
 }
 
 main {
@@ -240,6 +241,31 @@ li > button {
     background-color: rgba(255, 255, 255, 0.1);
     -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
+    transition: background-color 0.5s ease-out, transform 0.5s ease;
+}
+
+li > button.no-money{
+    background-color: rgb(255 0 0 / 0.1);
+    animation: shake 0.35s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-0.5rem); }
+    40%, 80% { transform: translateX(0.5rem); }
+}
+
+li > button.bought{
+    background-color: rgb(0 255 0 / 0.1);
+    transform: translateY(-0.5rem);
+}
+
+li > button.sold{
+    background-color: rgb(255 220 0 / 0.2);
+}
+
+li > button.sold.clicked{
+    transform: translateY(-1rem);
 }
 
 .upgrade-tooltip{
