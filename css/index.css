@@ -94,6 +94,20 @@ h1 { /* Hides the main title on the page visually, but makes it available for sc
     margin-top: -1rem; 
 }
 
+.evil-aura {
+    overflow: hidden;
+    position: fixed;
+    width: 35rem;
+    height: 35rem;
+    top: calc(50%);
+    right: calc(50%);
+    transform: translate(50%, -50%);
+    z-index: -1;
+
+    --aura-opacity: 0; /* min: 0, max: 0.48 */
+    background: radial-gradient(circle at center, rgb(255 0 0 / var(--aura-opacity)) 20%, rgb(255 0 0 / 0) 70%);
+}
+
 .upgrade-moon-button {
     top: calc(50% - 11rem );
     right: calc(50% + 15rem);
@@ -138,7 +152,7 @@ h1 { /* Hides the main title on the page visually, but makes it available for sc
     -ms-user-select: none;
 }
 
-.gravity-field {
+.moons {
     position: absolute;
     pointer-events: none;
     align-self: center;

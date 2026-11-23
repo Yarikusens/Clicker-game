@@ -7,6 +7,7 @@ const birthInterval= 5;
 const planetButton= document.querySelector(".planet-button");
 const populationText= document.getElementById("status-population");
 const balanceText= document.getElementById("status-balance");
+const aura = document.querySelector('.evil-aura');
 
 //The current numbers in status bar//
 function updateStatus()
@@ -167,6 +168,11 @@ function upgradeFunc(upgradeObj){
         upgradeObj.btn.classList.add("no-money");
         setTimeout(() => upgradeObj.btn.classList.remove("no-money"), 500);
     }
+    auraUpdate();
+}
+
+function auraUpdate(){
+    aura.style.setProperty('--aura-opacity', upgradeContainers[3].index * 0.08);
 }
 
 //    SAVING PROGRESS                                        SAVING PROGRESS
@@ -200,6 +206,7 @@ function loadProgress(){
         upgradeObj.nextValue.textContent = upgradeObj.upgrades[upgradeObj.index].value;
     }
     updateStatus();
+    auraUpdate();
 }
 
 function resetProgress(){

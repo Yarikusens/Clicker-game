@@ -93,15 +93,18 @@
             </ul>
         </section>
         <section class="planet-section" aria-label="Main click area" >
-            <button class="planet-button" type="button" aria-describedby="planet-hint" aria-label="Planet click">
-                <img src="images/mars.png" alt="" class="undraggable">
-            </button>
-            <div class="planet-hint"  id="planet-hint" >
-                <img src="images/hint-arrow.png" alt="" class="undraggable">
-                <p>Click your planet to increase population</p>
+            <div class="planet">
+                <button class="planet-button" type="button" aria-describedby="planet-hint" aria-label="Planet click">
+                    <img src="images/mars.png" alt="" class="undraggable">
+                </button>
+                <div class="planet-hint"  id="planet-hint" >
+                    <img src="images/hint-arrow.png" alt="" class="undraggable">
+                    <p>Click your planet to increase population</p>
+                </div>
+                <div class="evil-aura"></div>
             </div>
 
-            <div class="gravity-field">
+            <div class="moons">
                 <div id="orbit1" class=""> <!-- class="orbit" makes the moon orbit. It is done by js code -->
                     <button class="upgrade-moon-button" type="button" aria-describedby="upgrade-moon-hint" aria-label="Upgrade menu">
                         <img src="images/phobos.png" alt="" class="undraggable"> <!-- phobos-hint.png is for start tutorial -->
