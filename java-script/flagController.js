@@ -219,6 +219,13 @@ let currentCountryIndex = 0;
         flagSpan.textContent = countries[countries.length-1].name;
         return 0;
     }
+    flagUpdate()
+})();
+
+function flagUpdate() {
+    if (currentCountryIndex === countries.length-1) {
+        return 0;
+    }
     for (let index = 1; index < countries.length; index++) {
         if (population >= countries[index].population && population <= countries[index+1].population) {
             currentCountryIndex = index;
@@ -226,23 +233,6 @@ let currentCountryIndex = 0;
             flag.href = countries[index].link;
             flagSpan.textContent = countries[index].name;
             break;
-        }
-    }
-})();
-
-function flagUpdate() {
-    if (currentCountryIndex === countries.length-1) {
-        return 0;
-    }
-    if (population >= countries[currentCountryIndex].population) {
-        flag.textContent = countries[currentCountryIndex].code;
-        flag.href = countries[currentCountryIndex].link;
-        flagSpan.textContent = countries[currentCountryIndex].name;
-        if (population >= countries[currentCountryIndex+1].population) {
-            currentCountryIndex++;
-            flag.textContent = countries[currentCountryIndex].code;
-            flag.href = countries[currentCountryIndex].link;
-            flagSpan.textContent = countries[currentCountryIndex].name;
         }
     }
 }
