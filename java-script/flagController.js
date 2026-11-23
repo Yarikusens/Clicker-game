@@ -223,18 +223,16 @@ let currentCountryIndex = 0;
 })();
 
 function flagUpdate() {
-    if (currentCountryIndex === countries.length-1) {
-        return 0;
-    }
-    for (let index = 1; index < countries.length; index++) {
-        if (population >= countries[index].population && population <= countries[index+1].population) {
-            currentCountryIndex = index;
-            flag.textContent = countries[index].code;
-            flag.href = countries[index].link;
-            flagSpan.textContent = countries[index].name;
-            break;
-        }
-    }
+    const index = countries.findLastIndex(country => population >= country.population);
+    if (index === currentCountryIndex)
+        return;
+
+    currentCountryIndex = index;
+    const country = countries[index];
+
+    flag.textContent = country.code;
+    flag.href = country.link;
+    flagSpan.textContent = country.name;
 }
 
 setInterval(flagUpdate, 1000);
